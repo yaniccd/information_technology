@@ -1,9 +1,11 @@
-# Information technology
+# WSL installation and configuration walkthrough
+WSL (Windows subsystem for Linux) allows you to install and use Linux applications directly on Windows without the overhead of a traditional virtual machine or dualboot setup.
 
 ## Table of Contents
 - [Install WSL](#install_wsl)
 - [Install Anaconda](#install_anaconda)
 - [Configure Git](#configure_git)
+- [Clone a Git repo](#clone_git)
 
 ## Install WSL
 Useful link : [WSL installation](https://learn.microsoft.com/en-us/windows/wsl/install)
@@ -34,3 +36,27 @@ bash Anaconda3-2023.09-0-Linux-x86_64.sh
 git config –global user.email [your email]
 git config –global user.name [your user name]
 ```
+
+## Clone a Git repo
+The following section should be modified to use SSH instead of using HTTPS links.
+1. I personally like to create a Git folder where I store all my Git projects. To do so, use the `cd` command to reach the folder where you would want to greate your git folder. To create a folder called git, type
+```
+mkdir git
+```
+2. Then you can acces your folder
+```
+cd git
+```
+3. From the Github website of the repo you are trying to clone, copy the HTTPS link (click on the `<> Code` button and copy the link)
+4. Back in you shell, type
+```
+git clone [past HTTPS link]
+```
+5. Github will ask you for your username and a password (Token). The create a token, on you Github profil, then
+    * Settings
+    * Developer Settings (at the bottom)
+    * Personal access Tokens
+    * Tokens (classic)
+    * Generate new token
+    * Generate new token (classic)
+    * Setup the token then copy it, this is your password.
