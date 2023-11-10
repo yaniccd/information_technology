@@ -8,7 +8,6 @@ Useful link : [WSL installation](https://learn.microsoft.com/en-us/windows/wsl/i
 1. Open a command prompt by typing `cmd` in the Windows menu.
 2. To install Ubuntu, type
 ```
-wsl –install -d Ubuntu"
-```
-You can also
+wsl –install -d Ubuntu
+``` You can also
 3. This is new
