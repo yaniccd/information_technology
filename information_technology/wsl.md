@@ -101,6 +101,6 @@ Finally, you can run VScode directly form your Linux environment. To do so
 ## Jyputer notebook in WSL VS Code
 The following steps will allow you to run Jyputer notebooks from VS Code in you Linux environment
 1. In a VS Code instence open from your Linux shell, install the extension name "Jupyter". Make sur to select "install for WSL".
-2. You can now create files with the `ipynb`
+2. You can now create files with the `ipynb` extension
 3. In the top left corner of VS Code, Select Kernel
 4. Import python environnements
