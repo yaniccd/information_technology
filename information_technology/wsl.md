@@ -9,5 +9,7 @@ Useful link : [WSL installation](https://learn.microsoft.com/en-us/windows/wsl/i
 2. To install Ubuntu, type
 ```
 wsl –install -d Ubuntu
-``` You can also
+``` 
+
+You can also
 3. This is new
