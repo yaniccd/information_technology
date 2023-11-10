@@ -6,6 +6,9 @@ WSL (Windows subsystem for Linux) allows you to install and use Linux applicatio
 - [Install Anaconda](#install_anaconda)
 - [Configure Git](#configure_git)
 - [Clone a Git repo](#clone_git)
+- [Create a conda environnement for your git projet](#conda_env)
+- [Open a git repo stored on your WSL using VScode](#open_vscode)
+- [Jyputer notebook in WSL VS Code](#jupyter_notebook)
 
 ## Install WSL
 Useful link : [WSL installation](https://learn.microsoft.com/en-us/windows/wsl/install)
@@ -60,3 +63,44 @@ git clone [past HTTPS link]
     * Generate new token
     * Generate new token (classic)
     * Setup the token then copy it, this is your password.
+6. A clone of the repo should now be in your Git folder.
+
+## Create a conda environnement for your git projet
+It is best practice to have a different python environnement for every different git projet so that you only use the
+specifed libraries of the projet.
+1. Open your Linux shell.
+2. Most git repos will specify the Python version to use in the Readme.md file. If you don't specify the Python version, the latest Python version will automatically be applied to your environment
+```
+conda create -n [name of your environnement] python=[Python version]
+```
+3. To change from the base environnement to your new environnement, type
+```
+conda activate [name of your environnement]
+```
+4. Use the `cd` command to go into the folder where the requirements file is. Most repos will have a requirements file with the list of librairies to install in order to work with the Git project.
+5. To add the Python libraries specified in the requirements file to your actvated conda environnement, type (requirements files might have a different name)
+```
+pip install -r requirements.txt
+```
+6. Come back at the head of your repo directory using `cd ..` if need be.
+7. To root your environnement at the head of the repo (that tells Python where to look for the import functions) type
+```
+pip install -e . –user
+```
+8. It should not be the case, but if you get an error message saying something like `pip is not reconize as an internal command`. Type `conda install pip`
+
+## Open a git repo stored on your WSL using VScode
+Finally, you can run VScode directly form your Linux environment. To do so
+1. Open VScode, search for `WSL` in the vscode extension section on the left and install it.
+2. In your Linux shell, type `code .` to open VS Code in your current folder. If that doesn’t work, it might be because VS Code (and thus the command `code`) is not in your Linux PATH variable (tells Linux where to look for commands). So you would then have to had it manually. To do so
+    * Locate where your VS Code bin folder is saved on your laptop/PC and copy that path. Mine was in `c/Users/yanic/AppData/Local/Programs/Microsoft VS Code/bin/`
+    * In your Linux shell, type `echo $PATH` and make sure this path is not already in the variable. If it is, your problem comes from somewhere else. At that point, I can’t help anymore...
+    * `echo 'export PATH=\$PATH:"/mnt/[past path to bin folder]"' >> ~/.bashrc`
+    * The command `echo` makes your previous changes permanent so be careful what you do. If you would like to test if modifying your PATH variable fixes your problem before making the changes permanent, only type `export PATH=\$PATH:"/mnt[past path to bin folder]` and try to open VS Code again using `code .` If it works, use the previous line to make the change permanent.
+
+## Jyputer notebook in WSL VS Code
+The following steps will allow you to run Jyputer notebooks from VS Code in you Linux environment
+1. In a VS Code instence open from your Linux shell, install the extension name "Jupyter". Make sur to select "install for WSL".
+2. You can now create files with the `ipynb`
+3. In the top left corner of VS Code, Select Kernel
+4. Import python environnements

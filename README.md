@@ -1,4 +1,4 @@
-# Information technology
+# Information technology and other useful tools
 Repo of IT and coding tutorials. To be added:
 
 Beginner's Python tutorial for engineering and science.
