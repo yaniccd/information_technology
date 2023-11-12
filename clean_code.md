@@ -1,4 +1,4 @@
-# A quick introduction to clean code
+# A quick introduction to clean code in Python
 
 ## Table of Contents
 - [Docstrings](#docstrings)
