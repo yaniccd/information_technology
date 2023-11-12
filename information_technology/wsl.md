@@ -23,7 +23,7 @@ wsl –install -d Ubuntu
 
 ## Install Anaconda
 Anaconda allows you to create environments for your coding projects. It is best practice to create a different environment for every projet containing only the minimal libraries required. The environment system also allows you to use specific Python version for every project as well. To install Anaconda
-1.  Copy the link to the Linux Installer in the download page of the [Anaconda](https://www.anaconda.com/download/#linux) website (both of the page).
+1.  Copy the link to the Linux Installer in the download page of the [Anaconda](https://www.anaconda.com/download/#linux) website (bottom of the page).
 2. Open your Linux shell and type `wget` and past the Anaconda extension. It should look something like
 ```
 wget https://repo.anaconda.com/archive/Anaconda3-2023.09-0-Linux-x86_64.sh
