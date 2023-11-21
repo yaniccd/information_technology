@@ -4,6 +4,8 @@ Git is a distributed version control system (DVCS) designed to track changes in 
 ## Table of Contents
 - [Creating a SSH key](#creating_ss_key)
 - [Clone a Github repo with SSH](#Cloning_github)
+- [Creating a new branch](#branch)
+- [Push and Pull](#push_pull)
 
 ## Creating a SSH key
 An SSH key, or Secure Shell key, is a pair of cryptographic keys used to establish secure, encrypted communication between two parties over an insecure network. In our case, it is used to make the connection between a PC/laptop and our online Github account. Any repository for which you have acces through your Github account can be cloned on the linked machine without having to generate a new token (password equivalent) each time you want to work on your projects.
@@ -31,3 +33,71 @@ Then, on your Github account clic on your profil image in the top right corner a
 Then give a name to your key and past the content of your clipboard to link your machine to you Github account.
 
 ## Clone a Github repo with SSH
+1. I personally like to create a Git folder where I store all my Git projects. To do so, use the `cd` command to reach the folder where you would want to greate your git folder. To create a folder called git, type
+```
+mkdir git
+```
+2. Then you can acces your folder
+```
+cd git
+```
+3. From the Github website of the repo you are trying to clone, copy the SSH link (click on the `<> Code` button and copy the link)
+4. Back in you shell, type
+```
+git clone <past HTTPS link>
+```
+5. A clone of the repo should now be in your Git folder.
+
+## Creating a new branch
+To see the list of available branches
+```
+git branch
+```
+To create a new branch
+```
+git branch <new_branch_name>
+```
+To checkout to a branch
+```
+git checkout <branch_name>
+```
+You can also create a new branch and automatically checkout to it.
+```
+git checkout -b <new_branch_name>
+```
+In order to be able to work from your new branch and push its content onto your online repo, it first has to be set upstream (push the new branch to your online repo). To do so
+```
+git push --set-upstream origin <new_branch_name>
+```
+
+## Push and Pull
+To pull the latest changes from your online repo to your local machine, in your repo folder, type
+```
+git pull
+```
+The pulled branched is by default the currently checked-out one. To pull from another branch, do
+```
+git pull origin <branch_name>
+```
+Then, you will make some changes to your branch and eventually, you will want to push it back to your online repo. Here's how to do it. 
+
+1. You first have to stage the modified files. Staging is the process of selecting specific changes to be part of the next commit.
+```
+git add <file1> <file2> ...
+```
+You can also stage all modified files at once
+```
+git add --all
+```
+2. Then, you need to commit the changes. This commit is only local. 
+```
+git commit -m 'Your commit message.'
+```
+3. Finally, you can push the changes to the remote repository.
+```
+git push
+```
+It is sometimes necessary to specify both the remote repository and the branch to be pushed.
+```
+git push origin <branch_name>
+```
