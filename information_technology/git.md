@@ -81,6 +81,8 @@ git pull origin <branch_name>
 ```
 Then, you will make some changes to your branch and eventually, you will want to push it back to your online repo. Here's how to do it. 
 
+0. The command `git status` allows you to see the modified files that have or have not yet been commited.
+
 1. You first have to stage the modified files. Staging is the process of selecting specific changes to be part of the next commit.
 ```
 git add <file1> <file2> ...
