@@ -50,8 +50,17 @@ def test_iterator_sum(n):
     output_iterator = my_iterator(i, n)
     assert sum(output_iterator) == n
 ```
-The `assert`python statement is followed by a boolean variable that should be `True` if the test has passed, and `False` otherwise. In both cases, the unit tests will be done for all values of `n` in `range(8)`python.
+The `assert` statement is followed by a boolean variable that should be `True` if the test has passed, and `False` otherwise. In both cases, the unit tests will be done for all values of `n` in `range(8)`.
 
+To install and run a test file,
+```
+pip install pytest
+pytest test_example_module.py
+```
+If you only want to run a specific test,
+```
+pytest test_example_module.py -k 'test_iterator_size'
+```
 The following `numpy` function is really useful to test that two outputs other then scalars (matrices for example) are indentical
 ```python
 assert np.allclose(matrix_1, matrix_2)
