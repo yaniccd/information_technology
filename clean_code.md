@@ -6,10 +6,6 @@
 - [Pylint](#pylint)
 - [Black](#black)
 
-## Best practice
-Variable naming convention.
-Files organisation (source code, init file, test files)
-
 ## Docstrings
 A docstring is a string literal that occurs as the first statement in a module, function, class, or method definition in Python. It is used to document the purpose, usage, and behavior of the code. Example of docstring :
 ```python
