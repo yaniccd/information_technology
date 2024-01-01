@@ -18,4 +18,4 @@ Add basic Python and VS Code installation process (see IT document and python cl
 
 Include section with decorators and magic commands. (@numba for example.)
 
-Include latex and Overleaf section with templates and bibtex and source management guide (see plasma class for source management). [biblography](https://www.overleaf.com/learn/latex/Bibliography_management_in_LaTeX) [bibtex](https://www.overleaf.com/learn/latex/Bibliography_management_with_bibtex)
+Include latex and Overleaf section with templates and bibtex and source management guide (see plasma class for source management). [biblography](https://www.overleaf.com/learn/latex/Bibliography_management_in_LaTeX) and [bibtex](https://www.overleaf.com/learn/latex/Bibliography_management_with_bibtex)
