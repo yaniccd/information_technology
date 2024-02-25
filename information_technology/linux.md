@@ -6,6 +6,7 @@ The following is a guide to set up a solid work environment on Ubuntu. With this
 - [Setting Up a Working Environment](#setting_up_a_working_environment)
 - [Python Environments](#python_environments)
 - [Mathematica](#mathematica)
+- [Mount a Formatted Disk](#mount_a_formatted_disk)
 
 ## Ubuntu Installation
 To reboot your machine with the latest version of Ubuntu, follow the steps on [Install Ubuntu desktop](https://ubuntu.com/tutorials/install-ubuntu-desktop#1-overview).
@@ -31,4 +32,10 @@ After the installation of virtualenv, you can create an environement with `virtu
 I used the following [Mathematica engine installation](https://nicoguaro.github.io/posts/wolfram_jupyter/) tutorial, but it only worked to install the engine. To execute the download file, `sh path/WolframEngine_14.0.0_LINUX.sh`. For some reason, on VSCode and Jupterlab, the kernel was not able to connect. So I had to used this [Mathematica engine front-end](https://mathematica.stackexchange.com/questions/198839/how-to-add-a-front-end-to-the-free-wolfram-engine) tutorial to be able to use Mathematica in Jypter.
 
 You can always, from the terminal, open Mathematica with `wolframscript`, and use `CTRL`+`D` to exit the script.
+
+## Mount a Formatted Disk
+After you plugged in the formatted disk:
+* `mdkir ~/usb` to create a folder if you don't already have one.
+* `lsblk` to find the name of disk. If the disk is called `sdb1`
+* `sudo mount dev/sdb1 ~/usb` to mount the disk.
 
