@@ -5,7 +5,7 @@ The following is a guide to set up a solid work environment on Ubuntu. With this
 - [Ubuntu Installation](#ubuntu_installation)
 - [Setting Up a Working Environment](#setting_up_a_working_environment)
 - [Python Environments](#python_environments)
-- [Matematica](#matematica)
+- [Mathematica](#mathematica)
 
 ## Ubuntu Installation
 To reboot your machine with the latest version of Ubuntu, follow the steps on [Install Ubuntu desktop](https://ubuntu.com/tutorials/install-ubuntu-desktop#1-overview).
@@ -27,8 +27,8 @@ Then, in a terminal,
 ## Python Environments
 After the installation of virtualenv, you can create an environement with `virtualenv path/name`. Then, you can activate the environment with `source path/name/bin/activate`. Example : `source ~/venv/radar/bin/activate`. You can always `deactivate` the environment. `sudo snap install jupyter` to install jupyter. You can then always open a Jupyter notebook with the command `jupyter notebook`. You can always close the instance from the terminal with `CTRL`+`C`.
 
-## Matematica
-I used the following [Matematica engine installation](https://nicoguaro.github.io/posts/wolfram_jupyter/) tutorial, but it only worked to install the engine. To execute the download file, `sh path/WolframEngine_14.0.0_LINUX.sh`. For some reason, on VSCode and Jupterlab, the kernel was not able to connect. So I had to used this [Matematica engine front-end](https://mathematica.stackexchange.com/questions/198839/how-to-add-a-front-end-to-the-free-wolfram-engine) tutorial to be able to use Matematica in Jypter.
+## Matehmatica
+I used the following [Mathematica engine installation](https://nicoguaro.github.io/posts/wolfram_jupyter/) tutorial, but it only worked to install the engine. To execute the download file, `sh path/WolframEngine_14.0.0_LINUX.sh`. For some reason, on VSCode and Jupterlab, the kernel was not able to connect. So I had to used this [Mathematica engine front-end](https://mathematica.stackexchange.com/questions/198839/how-to-add-a-front-end-to-the-free-wolfram-engine) tutorial to be able to use Mathematica in Jypter.
 
-You can always, from the terminal, open Matematica with `wolframscript`, and use `CTRL`+`D` to exit the script.
+You can always, from the terminal, open Mathematica with `wolframscript`, and use `CTRL`+`D` to exit the script.
 
