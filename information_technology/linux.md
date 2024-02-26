@@ -11,7 +11,7 @@ The following is a guide to set up a solid work environment on Ubuntu. With this
 ## Ubuntu Installation
 To reboot your machine with the latest version of Ubuntu, follow the steps on [Install Ubuntu desktop](https://ubuntu.com/tutorials/install-ubuntu-desktop#1-overview).
 
-Once Ubuntu is opened on your machine, you can always type `CTRL`+`ALT`+`T` to open a terminal. You can see the content of the current folder with `ls`. Use `cd` with the path to navigate in your folders. `~/` to write app path from the home trajectory. `..` will bring you back one folder. Use the command `mkdir` with the path and the name to create a folder. `mv old_folder_name new_folder_name` to rename a folder. `rmdir folder_name` to delete an empty folder and `rm -r folder_name` to delete a folder with stuff in it.
+Once Ubuntu is opened on your machine, you can always type `CTRL`+`ALT`+`T` to open a terminal. You can see the content of the current folder with `ls`. Use `cd` with the path to navigate in your folders. `~/` to write app path from the home trajectory. `..` will bring you back one folder. Use the command `mkdir` with the path and the name to create a folder. `mv old_folder_name new_folder_name` to rename a folder. `rmdir folder_name` to delete an empty folder and `rm -r folder_name` to delete a folder with stuff in it or to delete specific files.
 
 You can also always look for Ubuntu updates with `sudo apt-get update`.
 
