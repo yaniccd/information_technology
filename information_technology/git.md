@@ -3,9 +3,11 @@ Git is a distributed version control system (DVCS) designed to track changes in 
 
 ## Table of Contents
 - [Creating a SSH key](#creating_ss_key)
+- [Git Configuration](#git_configuration)
 - [Clone a Github repo with SSH](#Cloning_github)
 - [Creating a new branch](#branch)
 - [Push and Pull](#push_pull)
+- [Pull a Branch](#pull_a_branch)
 
 ## Creating a SSH key
 An SSH key, or Secure Shell key, is a pair of cryptographic keys used to establish secure, encrypted communication between two parties over an insecure network. In our case, it is used to make the connection between a PC/laptop and our online Github account. Any repository for which you have acces through your Github account can be cloned on the linked machine without having to generate a new token (password equivalent) each time you want to work on your projects. Reference : [Github Docs](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
@@ -14,7 +16,7 @@ In your shell, type the following to generate a new SSH key.
 ```
 ssh-keygen
 ```
-You can simply press enter through every question to leave the default saving parameters and to not have a password for the key. In my case, this password is not particularly useful since no one else then me uses my laptop. 
+You can simply press enter through every question to leave the default saving parameters and to not have a password for the key. In my case, this password is not particularly useful since no one else then me uses my laptop. In Linux, I actually used the command `ssh-keygen -o -t -C "yanic.cardin.1@gmail.com"`.
 
 Now that the key has been generated, we will need to copy its content to link it to a Github account. Usually, the key should have been saved in a folder named `.ssh` in your home directory. To copy the containt of the key (change key name for actual key name on your machine) use the `clip` command from Linux
 ```
@@ -31,6 +33,13 @@ Then, on your Github account clic on your profil image in the top right corner a
 * New SSH key
 
 Then give a name to your key and past the content of your clipboard to link your machine to you Github account.
+
+## Git Configuration
+In a terminal, in order to configure git on your machine
+```
+git config --global user.email "you@example.com"
+git config --global user.name "Your Name"
+```
 
 ## Clone a Github repo with SSH
 1. I personally like to create a Git folder where I store all my Git projects. To do so, use the `cd` command to reach the folder where you would want to greate your git folder. To create a folder called git, type
@@ -103,3 +112,6 @@ It is sometimes necessary to specify both the remote repository and the branch t
 ```
 git push origin <branch_name>
 ```
+
+### Pull a Branch
+To pull a specific branch from the repo, `git checkout --track origin/branch_name`.
