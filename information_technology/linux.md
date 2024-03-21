@@ -7,6 +7,7 @@ The following is a guide to set up a solid work environment on Ubuntu. With this
 - [Python Virtual Environments](#python_virtual_environments)
 - [Mathematica](#mathematica)
 - [Mount a Formatted Disk](#mount_a_formatted_disk)
+- [Shell Scripting](#shell_scripting)
 
 ## Ubuntu Installation
 To reboot your machine with the latest version of Ubuntu, follow the steps on [Install Ubuntu desktop](https://ubuntu.com/tutorials/install-ubuntu-desktop#1-overview).
@@ -41,4 +42,8 @@ After you plugged in the formatted disk:
 
 To unmount the usb stick,
 * `sudo umount ~/usb`
+
+## Shell Scripting
+[automate](https://blog.stackademic.com/automating-tasks-in-linux-using-cron-jobs-and-shell-scripting-6d23651b3c2c)
+
 
