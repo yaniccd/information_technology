@@ -7,6 +7,7 @@ The following is a guide to set up a solid work environment on Ubuntu. With this
 - [Python Virtual Environments](#python_virtual_environments)
 - [Mathematica](#mathematica)
 - [Mount a Formatted Disk](#mount_a_formatted_disk)
+- [Shell Scripting](#shell_scripting)
 
 ## Ubuntu Installation
 To reboot your machine with the latest version of Ubuntu, follow the steps on [Install Ubuntu desktop](https://ubuntu.com/tutorials/install-ubuntu-desktop#1-overview).
@@ -28,6 +29,8 @@ Then, in a terminal,
 ## Python Virtual Environments
 After the installation of virtualenv, you can create an environement with `virtualenv path/name`. Then, you can activate the environment with `source path/name/bin/activate`. Example : `source ~/venv/radar/bin/activate`. You can always `deactivate` the environment. `sudo snap install jupyter` to install jupyter. You can then always open a Jupyter notebook with the command `jupyter notebook`. You can always close the instance from the terminal with `CTRL`+`C`.
 
+If you are working in a project with a `requirements.txt` file with the required packages needed to work on the projet, you simply have to run `pip install -r requirements.txt` to install the packages on your activated virtual environment.
+
 ## Mathematica
 I used the following [Mathematica engine installation](https://nicoguaro.github.io/posts/wolfram_jupyter/) tutorial, but it only worked to install the engine. To execute the download file, `sh path/WolframEngine_14.0.0_LINUX.sh`. For some reason, on VSCode and Jupterlab, the kernel was not able to connect. So I had to used this [Mathematica engine front-end](https://mathematica.stackexchange.com/questions/198839/how-to-add-a-front-end-to-the-free-wolfram-engine) tutorial to be able to use Mathematica in Jypter.
 
@@ -41,4 +44,8 @@ After you plugged in the formatted disk:
 
 To unmount the usb stick,
 * `sudo umount ~/usb`
+
+## Shell Scripting
+[automate](https://blog.stackademic.com/automating-tasks-in-linux-using-cron-jobs-and-shell-scripting-6d23651b3c2c)
+
 

@@ -7,7 +7,9 @@ Git is a distributed version control system (DVCS) designed to track changes in 
 - [Clone a Github repo with SSH](#Cloning_github)
 - [Creating a new branch](#branch)
 - [Push and Pull](#push_pull)
-- [Pull a Branch](#pull_a_branch)
+- [Track a specific branch from the repo](#track-a-specific-branch-from-the-repo)
+- [Resolve merge conflicts by given priority to modifications on the main](#resolve-merge-conflicts-by-given-priority-to-modifications-on-the-main)
+- [Pull changes made on the main onto your own branch](#pull-changes-made-on-the-main-onto-your-own-branch)
 
 ## Creating a SSH key
 An SSH key, or Secure Shell key, is a pair of cryptographic keys used to establish secure, encrypted communication between two parties over an insecure network. In our case, it is used to make the connection between a PC/laptop and our online Github account. Any repository for which you have acces through your Github account can be cloned on the linked machine without having to generate a new token (password equivalent) each time you want to work on your projects. Reference : [Github Docs](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
@@ -113,5 +115,30 @@ It is sometimes necessary to specify both the remote repository and the branch t
 git push origin <branch_name>
 ```
 
-### Pull a Branch
+## Track a specific branch from the repo
 To pull a specific branch from the repo, `git checkout --track origin/branch_name`.
+
+## Resolve merge conflicts by given priority to modifications on the main
+First, make sure you have the lastest modifications to the main branch.
+```
+git checkout main
+git pull origin main
+```
+Then switch to your branch and merge the main unto it by specifing with the strategy `theirs` that you want to give priority to the main whenever their is a conflict.
+```
+git checkout your_branch
+git merge main --strategy-option=theirs
+```
+Then you can commit the changes to the your branch
+```
+git commit -m 'your message'
+git push
+```
+Then the pull request can be made from Github. Their should not be any conflicts anymore.
+
+## Pull changes made on the main onto your own branch
+```
+git fetch origin
+git checkout your_branch
+git merge origin/main
+```

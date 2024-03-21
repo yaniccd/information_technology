@@ -5,6 +5,7 @@
 - [Pytest](#pytest)
 - [Pylint](#pylint)
 - [Black](#black)
+- [Debugging](#debugging)
 
 ## Docstrings
 A docstring is a string literal that occurs as the first statement in a module, function, class, or method definition in Python. It is used to document the purpose, usage, and behavior of the code. Example of docstring :
@@ -95,3 +96,5 @@ By default, `Black` will modify the files in place. If you want to see the chang
 ```
 black --check example_module.py
 ```
+
+## Debugging
