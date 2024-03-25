@@ -1,5 +1,5 @@
 # Python setup on Windows
-The following is a guide to set up Python on Windows.
+The following is a guide to set up Python on Windows. See also [mr-sheg](https://github.com/mr-sheg/Python-Tutorials/blob/main/Documentation/1.%20Installing%20python%20-%20windows.md).
 
 ## Table of Contents
 - [Python Installation](#python_installation)
