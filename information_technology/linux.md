@@ -5,6 +5,7 @@ The following is a guide to set up a solid work environment on Ubuntu. With this
 - [Ubuntu Installation](#ubuntu_installation)
 - [Working Setup](#working_setup)
 - [Python Virtual Environments](#python_virtual_environments)
+- [Julia](#julia)
 - [Mathematica](#mathematica)
 - [Mount a Formatted Disk](#mount_a_formatted_disk)
 - [Shell Scripting](#shell_scripting)
@@ -30,6 +31,20 @@ Then, in a terminal,
 After the installation of virtualenv, you can create an environement with `virtualenv path/name`. Then, you can activate the environment with `source path/name/bin/activate`. Example : `source ~/venv/radar/bin/activate`. You can always `deactivate` the environment. `sudo snap install jupyter` to install jupyter. You can then always open a Jupyter notebook with the command `jupyter notebook`. You can always close the instance from the terminal with `CTRL`+`C`.
 
 If you are working in a project with a `requirements.txt` file with the required packages needed to work on the projet, you simply have to run `pip install -r requirements.txt` to install the packages on your activated virtual environment.
+
+## Julia
+To install Julia, simply run `curl -fsSL https://install.julialang.org | sh` in a terminal or follow these (instructions)[https://julialang.org/downloads/]. This command doesn't seem to work too well with the snap installation of curl. If you get an error saying that curl wasn't able to find a path, you can remove the snap version and install the apt version. 
+```
+sudo snap remove curl
+sudo apt install curl
+```
+Then, `sudo snap install julia` will allow you to simply type `julia` in a terminal to run it. In order to run Julia in a Jupyter notebook, you'll have to install the IJulia package. To do so, in a terminal,
+```
+julia
+using Pkg
+Pkg.add("IJulia")
+``` 
+You should know have acces to the Julia kernel in your notebooks.
 
 ## Mathematica
 I used the following [Mathematica engine installation](https://nicoguaro.github.io/posts/wolfram_jupyter/) tutorial, but it only worked to install the engine. To execute the download file, `sh path/WolframEngine_14.0.0_LINUX.sh`. For some reason, on VSCode and Jupterlab, the kernel was not able to connect. So I had to used this [Mathematica engine front-end](https://mathematica.stackexchange.com/questions/198839/how-to-add-a-front-end-to-the-free-wolfram-engine) tutorial to be able to use Mathematica in Jypter.
