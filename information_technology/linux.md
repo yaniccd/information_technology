@@ -28,7 +28,7 @@ Then, in a terminal,
 * `pip install virtualenv` to install a package for virtual environments. For some reason, there has been a bug on Ubuntu 23.10 that forced me to use `sudo apt install python3-virtualenv` to install packages.
 
 ## Python Virtual Environments
-After the installation of virtualenv, you can create an environement with `virtualenv path/name`. Then, you can activate the environment with `source path/name/bin/activate`. Example : `source ~/venv/radar/bin/activate`. You can always `deactivate` the environment. `sudo snap install jupyter` to install jupyter. You can then always open a Jupyter notebook with the command `jupyter notebook`. You can always close the instance from the terminal with `CTRL`+`C`.
+After the installation of virtualenv, you can create an environement with `virtualenv path/name`. Then, you can activate the environment with `source path/name/bin/activate`. Example : `source ~/venv/radar/bin/activate`. You can always `deactivate` the environment. The `pip install jupyterlab` or `sudo snap install jupyter` to install jupyter. You can then always open a Jupyter notebook with the command `jupyter lab` (or `jupyter notebook` for previous version). You can always close the instance from the terminal with `CTRL`+`C`.
 
 If you are working in a project with a `requirements.txt` file with the required packages needed to work on the projet, you simply have to run `pip install -r requirements.txt` to install the packages on your activated virtual environment.
 
