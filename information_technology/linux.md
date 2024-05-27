@@ -5,9 +5,11 @@ The following is a guide to set up a solid work environment on Ubuntu. With this
 - [Ubuntu Installation](#ubuntu_installation)
 - [Working Setup](#working_setup)
 - [Python Virtual Environments](#python_virtual_environments)
+- [Julia](#julia)
 - [Mathematica](#mathematica)
 - [Mount a Formatted Disk](#mount_a_formatted_disk)
 - [Shell Scripting](#shell_scripting)
+- [Download Fonts](#download-fonts)
 
 ## Ubuntu Installation
 To reboot your machine with the latest version of Ubuntu, follow the steps on [Install Ubuntu desktop](https://ubuntu.com/tutorials/install-ubuntu-desktop#1-overview).
@@ -27,9 +29,23 @@ Then, in a terminal,
 * `pip install virtualenv` to install a package for virtual environments. For some reason, there has been a bug on Ubuntu 23.10 that forced me to use `sudo apt install python3-virtualenv` to install packages.
 
 ## Python Virtual Environments
-After the installation of virtualenv, you can create an environement with `virtualenv path/name`. Then, you can activate the environment with `source path/name/bin/activate`. Example : `source ~/venv/radar/bin/activate`. You can always `deactivate` the environment. `sudo snap install jupyter` to install jupyter. You can then always open a Jupyter notebook with the command `jupyter notebook`. You can always close the instance from the terminal with `CTRL`+`C`.
+After the installation of virtualenv, you can create an environement with `virtualenv path/name`. Then, you can activate the environment with `source path/name/bin/activate`. Example : `source ~/venv/radar/bin/activate`. You can always `deactivate` the environment. The `pip install jupyterlab` or `sudo snap install jupyter` to install jupyter. You can then always open a Jupyter notebook with the command `jupyter lab` (or `jupyter notebook` for previous version). You can always close the instance from the terminal with `CTRL`+`C`.
 
 If you are working in a project with a `requirements.txt` file with the required packages needed to work on the projet, you simply have to run `pip install -r requirements.txt` to install the packages on your activated virtual environment.
+
+## Julia
+To install Julia, simply run `curl -fsSL https://install.julialang.org | sh` in a terminal or follow these (instructions)[https://julialang.org/downloads/]. This command doesn't seem to work too well with the snap installation of curl. If you get an error saying that curl wasn't able to find a path, you can remove the snap version and install the apt version. 
+```
+sudo snap remove curl
+sudo apt install curl
+```
+Then, `sudo snap install julia` will allow you to simply type `julia` in a terminal to run it. In order to run Julia in a Jupyter notebook, you'll have to install the IJulia package. To do so, in a terminal,
+```
+julia
+using Pkg
+Pkg.add("IJulia")
+``` 
+You should know have acces to the Julia kernel in your notebooks.
 
 ## Mathematica
 I used the following [Mathematica engine installation](https://nicoguaro.github.io/posts/wolfram_jupyter/) tutorial, but it only worked to install the engine. To execute the download file, `sh path/WolframEngine_14.0.0_LINUX.sh`. For some reason, on VSCode and Jupterlab, the kernel was not able to connect. So I had to used this [Mathematica engine front-end](https://mathematica.stackexchange.com/questions/198839/how-to-add-a-front-end-to-the-free-wolfram-engine) tutorial to be able to use Mathematica in Jypter.
@@ -49,3 +65,17 @@ To unmount the usb stick,
 [automate](https://blog.stackademic.com/automating-tasks-in-linux-using-cron-jobs-and-shell-scripting-6d23651b3c2c)
 
 
+## Download Fonts
+A lot of different fonts can be download directly from [Google Fonts](https://fonts.google.com/), but extra steps are needed to have acces to these fonts on other softwar. Once you have picked and download the desired font, unzip the download file and move the `.ttf` file(s) into the font folders. For example, I create a folder called `google` within my font folder. In order to move the files,
+```
+sudo cp ~/Downloads/Sulphur_Point/SulphurPoint-Regular.ttf  /usr/share/fonts/truetype/google/
+```
+Then, update the cache
+```
+sudo fc-cache -f -v
+```
+You can then make sure your new font as been properly added to the font list
+```
+
+```
+You should now have acces to the font through all apts.
