@@ -9,6 +9,7 @@ The following is a guide to set up a solid work environment on Ubuntu. With this
 - [Mathematica](#mathematica)
 - [Mount a Formatted Disk](#mount_a_formatted_disk)
 - [Shell Scripting](#shell_scripting)
+- [Download Fonts](#download-fonts)
 
 ## Ubuntu Installation
 To reboot your machine with the latest version of Ubuntu, follow the steps on [Install Ubuntu desktop](https://ubuntu.com/tutorials/install-ubuntu-desktop#1-overview).
@@ -64,3 +65,17 @@ To unmount the usb stick,
 [automate](https://blog.stackademic.com/automating-tasks-in-linux-using-cron-jobs-and-shell-scripting-6d23651b3c2c)
 
 
+## Download Fonts
+A lot of different fonts can be download directly from [Google Fonts](https://fonts.google.com/), but extra steps are needed to have acces to these fonts on other softwar. Once you have picked and download the desired font, unzip the download file and move the `.ttf` file(s) into the font folders. For example, I create a folder called `google` within my font folder. In order to move the files,
+```
+sudo cp ~/Downloads/Sulphur_Point/SulphurPoint-Regular.ttf  /usr/share/fonts/truetype/google/
+```
+Then, update the cache
+```
+sudo fc-cache -f -v
+```
+You can then make sure your new font as been properly added to the font list
+```
+
+```
+You should now have acces to the font through all apts.
