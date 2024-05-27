@@ -76,6 +76,6 @@ sudo fc-cache -f -v
 ```
 You can then make sure your new font as been properly added to the font list
 ```
-
+fc-list | grep "Sulphur Point"
 ```
 You should now have acces to the font through all apts.
