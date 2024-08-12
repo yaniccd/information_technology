@@ -15,6 +15,7 @@ Basic commands
 * `cp -r <path1> <path2>` copies a whole directory, where `r` stands for recursive which allows use to work with the whole content of a path.
 * `rm <file>` removes (deletes) a file.
 * `rm -r <path>` removes (deletes) a directory.
+* `rmdir <path>` can also remove a directory.
 * `cat <file>` stands for concatenate. Allows to read the content of a file.
 * `head <file>` returns 5 first lines of a file. Or use `head -n 10 <file>` to specify the number of lines to display, 10 in that case.
 * `tail <file>` returns 5 last lines of a file.
