@@ -73,9 +73,9 @@ tar -xjf Zotero-7.0.3_linux-x86_64.tar.bz2
 ```
 Move to a proper apt folder. Then, from this folder, update `.desktop` file for the location and create a symbolic link in the local applications directory
 ```
-mv Zotero_linux-x86_64 /opt/zotero
+sudo mv Zotero_linux-x86_64 /opt/zotero
 cd /opt/zotero
-set_launcher_icon
+./set_launcher_icon
 ln -s /opt/zotero/zotero.desktop ~/.local/share/applications/zotero.desktop
 ```
 Zotero should then be accessible through the application launcher. YOu can then add the [Zotero connector](https://www.zotero.org/download/) for Firefox in order to upload papers online directly to Zotero.
