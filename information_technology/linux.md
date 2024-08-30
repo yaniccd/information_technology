@@ -69,7 +69,7 @@ To unmount the usb stick,
 ## Install Zotero
 Zotero is a reference management tool. To install it on Ubuntu, start by downloading the tarball from [Zotero](https://www.zotero.org/download/) website. Then from your download folder, extract its content
 ```
-tar -xjf Zotero-7.0.2_linux-x86_64.tar.bz2
+tar -xjf Zotero-7.0.3_linux-x86_64.tar.bz2
 ```
 Move to a proper apt folder. Then, from this folder, update `.desktop` file for the location and create a symbolic link in the local applications directory
 ```
