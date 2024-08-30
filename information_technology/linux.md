@@ -67,7 +67,18 @@ To unmount the usb stick,
 
 
 ## Install Zotero
-Zotero is
+Zotero is a reference management tool. To install it on Ubuntu, start by downloading the tarball from [Zotero](https://www.zotero.org/download/) website. Then from your download folder, extract its content
+```
+tar -xjf Zotero-7.0.2_linux-x86_64.tar.bz2
+```
+Move to a proper apt folder. Then, from this folder, update `.desktop` file for the location and create a symbolic link in the local applications directory
+```
+mv Zotero_linux-x86_64 /opt/zotero
+cd /opt/zotero
+set_launcher_icon
+ln -s /opt/zotero/zotero.desktop ~/.local/share/applications/zotero.desktop
+```
+Zotero should then be accessible through the application launcher.
 
 ## Download Fonts
 A lot of different fonts can be download directly from [Google Fonts](https://fonts.google.com/), but extra steps are needed to have acces to these fonts on other softwar. Once you have picked and download the desired font, unzip the download file and move the `.ttf` file(s) into the font folders. For example, I create a folder called `google` within my font folder. In order to move the files,

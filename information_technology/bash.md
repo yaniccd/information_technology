@@ -15,13 +15,15 @@ Basic commands
 * `cp -r <path1> <path2>` copies a whole directory, where `r` stands for recursive which allows use to work with the whole content of a path.
 * `rm <file>` removes (deletes) a file.
 * `rm -r <path>` removes (deletes) a directory.
-* `rmdir <path>` can also remove a directory.
 * `cat <file>` stands for concatenate. Allows to read the content of a file.
 * `head <file>` returns 5 first lines of a file. Or use `head -n 10 <file>` to specify the number of lines to display, 10 in that case.
 * `tail <file>` returns 5 last lines of a file.
 * `grep <"string"> <file>` returns all lines with occurence of the string in the file.
-* `find <path> -name *.py` search for files or directory from a certain path. Use `find . -name *.py` to look in current directory. `*` means that  
+* `find <path> -name *.py` search for files or directory from a certain path. Use `find . -name *.py` to look in current directory. `*` means that you are taking all that finishes with `.py`.
 
+More advance commands.
+* `sudo apt update` to update packages on the account.
+* `sudo apt insall <package>` to install a package.
 
 ## My very first BASH script
 Open the text editor and create a bash script (with extension `.sh`) by typing `nano script.sh`. Then, you can write the follow where the first lines defines the type of scrpit written (telling the BASH interpreter what language to use for this script).
