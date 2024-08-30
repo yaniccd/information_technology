@@ -78,7 +78,7 @@ cd /opt/zotero
 set_launcher_icon
 ln -s /opt/zotero/zotero.desktop ~/.local/share/applications/zotero.desktop
 ```
-Zotero should then be accessible through the application launcher.
+Zotero should then be accessible through the application launcher. YOu can then add the [Zotero connector](https://www.zotero.org/download/) for Firefox in order to upload papers online directly to Zotero.
 
 ## Download Fonts
 A lot of different fonts can be download directly from [Google Fonts](https://fonts.google.com/), but extra steps are needed to have acces to these fonts on other softwar. Once you have picked and download the desired font, unzip the download file and move the `.ttf` file(s) into the font folders. For example, I create a folder called `google` within my font folder. In order to move the files,
