@@ -15,4 +15,6 @@ cd docs
 sphinx-quickstart
 sphinx-build -b html . _build
 ```
+Add `docs/_build` to the *.gitignore* file.
+
 ### Host documentation on Read the Docs
