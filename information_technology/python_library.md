@@ -4,6 +4,20 @@ Guideline on how to create and maintain a Python library.
 - [Github](#github)
 - [Pypi](#pypi)
 - [Documentation](#documentation)
+- [Maintenance](#maintenance)
+
+
+## Github
+Files needed and folder structur.
+```
+black
+pylint
+pytest folder\file_name
+pytest folder\file_name -k 'test_name'
+```
+
+## Pypi
+Find name and see if already taken.
 
 ## Documentation
 ### Generate documentation from docstrings
@@ -18,3 +32,6 @@ sphinx-build -b html . _build
 Add `docs/_build` to the *.gitignore* file.
 
 ### Host documentation on Read the Docs
+
+
+Versioning
