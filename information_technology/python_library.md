@@ -42,7 +42,10 @@ pylint haarpy/unitary.py
 
 
 ## Maintenance
+The following section discuss the maintenance of the library and the procedure to update the library by releasing a new version.
 
+
+How to look up all instance of a specific string in linux??? (to update version)
 
 
 
