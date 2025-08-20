@@ -72,13 +72,17 @@ To checkout to a branch
 ```
 git checkout <branch_name>
 ```
-You can also create a new branch and automatically checkout to it.
+The new branch is a copy of the branch you are currently on. To branchout of your `main` branch, make sure you use `git checkout main` before creating the new branch. You can also create a new branch and automatically checkout to it.
 ```
 git checkout -b <new_branch_name>
 ```
 In order to be able to work from your new branch and push its content onto your online repo, it first has to be set upstream (push the new branch to your online repo). To do so
 ```
 git push --set-upstream origin <new_branch_name>
+```
+or, in short,
+```
+git push -u origin <new_branch_name>
 ```
 
 ## Push and Pull
@@ -112,12 +116,19 @@ git push
 ```
 It is sometimes necessary to specify both the remote repository and the branch to be pushed.
 ```
-git push origin <branch_name>
+git push origin branch_name
 ```
 
 ## Track a specific branch from the repo
-To pull a specific branch from the repo, `git checkout --track origin/branch_name`.
-
+To pull a specific branch from the repo, `git checkout --track origin/branch_name`. Alternatively,
+```
+git fetch origin
+git checkout branch_name
+```
+Other alternative
+```
+git checkout -b branch_name origin/branch_name
+```
 ## Resolve merge conflicts by given priority to modifications on the main
 First, make sure you have the lastest modifications to the main branch.
 ```
@@ -142,3 +153,10 @@ git fetch origin
 git checkout your_branch
 git merge origin/main
 ```
+Alternative
+```
+git checkout main
+git git pull
+git checkout your_branch && git merge main
+```
+I believe there might be a better way to do that using `base` or `rebase`.

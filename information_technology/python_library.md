@@ -33,5 +33,14 @@ Add `docs/_build` to the *.gitignore* file.
 
 ### Host documentation on Read the Docs
 
-
-Versioning
+## Maintenance
+```
+pip install haarpy -upgrade
+```
+From the terminal, to see which version you are working with
+```
+python3
+import haarpy
+haarpy.__version__
+haarpy.about()
+```
