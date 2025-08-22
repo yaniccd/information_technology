@@ -7,10 +7,10 @@ The technicalities of git will not be discussed here. For a git tutorial, refer 
 ## Table of Contents
 - [Github Setup](#github-setup)
 - [Best Practice](#best-practice)
-- [Documentation](#documentation)
 - [First Release](#first-release)
 - [Maintenance](#maintenance)
 - [Subsequent Releases](#subsequent-releases)
+- [Documentation](#documentation)
 
 ## Github Setup
 The first step is to create a new repository on Github. Three files are automatically included in the repo : `README.md`, `LICENSE` and `.gitignore` file. The `README.md` is a markdown file that contains the overview of the repo or the library; it is displayed on the main page of the repo. The `LICENSE` file is simply a copyright file. Finally, the `.gitignore` file is useful to ignore specific types of files from a git standpoint whenever modifications are pushed to a specific branch.
@@ -20,6 +20,7 @@ The `requirements.txt` file
 The `__init__.py` file
 
 ## Best Practice
+### Working environment best practice
 Actual code files should be placed in a folder with the name of the library. That would be the *haarpy* folder in this example. The modules of the library can then be saved in this folder. A *tests* folder should also be created within this folder where a different test file shall be created for every module of the library. See for instance the `unitary.py` file saved within the *haarpy* folder and its test filed called `test_unitary.py` saved in the *tests* folder.
 
 There are many ways to perform unit tests in Python. The most commun one is throught the *pytest* library that should be part of the developpement required libraries. The idea of the unit test is to validate the well functionning of the functions of eachmodule against known results or expected behavior. All test names shall be named `test_...` or else it will be ignored by the *pytest*. Good unitest should call every single line of the tested module, we then say that the coverage is of 100%. The tests can then be run through the terminal. For instance
@@ -36,11 +37,13 @@ black haarpy/unitary.py
 pylint haarpy/unitary.py
 ```
 
-## Documentation
+### Coding best practice
+Move **../clean_code.md** here.
 
 ## First release
 *Pypi* link
 
+I can't recall the exact steps we did in terms of linking **Pypi** to the repo and building the wheel to make the library pip installable.
 
 ```
 pip install haarpy
@@ -63,8 +66,48 @@ The following section discuss the maintenance of the library and the procedure t
 
 Create a new branch make some changes. And do pull request. You can automate the test by...
 
+log of changes
+### Badges
+The badges, usually provided by [Shields](https://shields.io/), are often seen on the main page of Python libraries repos. It provides concise information about the library and asserts its reliability.
+<p align="center">
+  <img src="figures/badges.png" alt="badges" title="badges">
+</p>
 
+The first thing you need to do is to add to the **README.md** file the following HTML code
+```
+<div align="center">
+
+  <a href="https://pypi.org/project/haarpy">
+    <img src="https://github.com/polyquantique/haarpy/actions/workflows/tests.yml/badge.svg" alt="Test"/>
+  </a>
+
+  <a href="https://codecov.io/gh/polyquantique/haarpy" > 
+   <img src="https://codecov.io/gh/polyquantique/haarpy/graph/badge.svg?token=VYWOCW165M"/> 
+  </a>
+
+  <a href="https://pypi.org/project/haarpy">
+    <img src="https://img.shields.io/pypi/pyversions/haarpy.svg?style=flat" alt="Python Versions"/>
+  </a>
+
+  <a href="https://pypi.python.org/pypi/haarpy">
+    <img src="https://img.shields.io/pypi/v/haarpy.svg" alt="PyPI version"/>
+  </a>
+
+</div>
+
+<br>
+```
+
+### Test automation
+
+### Coverage automation
+
+### Quality automation
 ## Subsequent Releases
+
+
+
+
 The last thing to do is to update the version number everywhere on the repo the version of the new release. In order to avoid missing any instance, use the following shell command to find all files containing an instance of the string *version*.
 ```
 grep -rl "version" .
@@ -72,6 +115,24 @@ grep -rl "version" .
 I would usually validate that all files have been properly updated by looking for any instance of the old version number.
 ```
 grep -rl "0.0.1" .
+```
+The library is now ready for its new release. Click on **Releases* on the right side of the main page of the repo.
+<p align="center">
+  <img src="figures/version.png" alt="version" title="version">
+</p>
+
+Then click on **draft a new release**. Select a tag for the release in the appropriate box. I usually name them with the convention **v0.0.2** with the appropriate release number. The release title would usually be the same as the tag. Finally, one can write a little release note before pressing **Publish release** and voilà, the new release is up and running. The *Pypi* link on the main page should now show the correct version. Note that the whole process can be automated as it is often the case for large librairies.
+
+The installed library can then be updraged on your local environment with the pip command
+```
+pip install haarpy -upgrade
+```
+You can always see which version you are working with from a Python terminal.
+```
+python3
+import haarpy
+haarpy.__version__
+haarpy.about()
 ```
 ## Pypi
 Find name and see if already taken.
@@ -89,15 +150,3 @@ sphinx-build -b html . _build
 Add `docs/_build` to the *.gitignore* file.
 
 ### Host documentation on Read the Docs
-
-## Maintenance
-```
-pip install haarpy -upgrade
-```
-From the terminal, to see which version you are working with
-```
-python3
-import haarpy
-haarpy.__version__
-haarpy.about()
-```
