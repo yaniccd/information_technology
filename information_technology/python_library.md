@@ -41,8 +41,6 @@ pylint haarpy/unitary.py
 Move **../clean_code.md** here.
 
 ## First release
-*Pypi* link
-
 I can't recall the exact steps we did in terms of linking **Pypi** to the repo and building the wheel to make the library pip installable.
 
 ```
@@ -118,7 +116,7 @@ grep -rl "0.0.1" .
 ```
 The library is now ready for its new release. Click on **Releases* on the right side of the main page of the repo.
 <p align="center">
-  <img src="figures/version.png" alt="version" title="version">
+  <img src="figures/version.png" alt="version" title="version" width="200">
 </p>
 
 Then click on **draft a new release**. Select a tag for the release in the appropriate box. I usually name them with the convention **v0.0.2** with the appropriate release number. The release title would usually be the same as the tag. Finally, one can write a little release note before pressing **Publish release** and voilà, the new release is up and running. The *Pypi* link on the main page should now show the correct version. Note that the whole process can be automated as it is often the case for large librairies.
@@ -134,8 +132,6 @@ import haarpy
 haarpy.__version__
 haarpy.about()
 ```
-## Pypi
-Find name and see if already taken.
 
 ## Documentation
 ### Generate documentation from docstrings
