@@ -7,8 +7,10 @@ The technicalities of git will not be discussed here. For a git tutorial, refer 
 ## Table of Contents
 - [Github Setup](#github-setup)
 - [Best Practice](#best-practice)
+    - [Working environment best practice](#working-environment-best-practice)
 - [First Release](#first-release)
 - [Maintenance](#maintenance)
+    - [Badges](#badges)
 - [Subsequent Releases](#subsequent-releases)
 - [Documentation](#documentation)
 
@@ -41,6 +43,8 @@ pylint haarpy/unitary.py
 Move **../clean_code.md** here.
 
 ## First release
+**.github/workflows/python-publish.yml**
+
 I can't recall the exact steps we did in terms of linking **Pypi** to the repo and building the wheel to make the library pip installable.
 
 ```
@@ -71,7 +75,7 @@ The badges, usually provided by [Shields](https://shields.io/), are often seen o
   <img src="figures/badges.png" alt="badges" title="badges" width="600">
 </p>
 
-The first thing you need to do is to add to the **README.md** file the following HTML code
+In this specific case, from the left to right, the badges : assert that all tests are passing and that the test coverage is of 100% (percentage of lines of code covered by the tests), and show the compatible Python versions and the library's latest version. In order to add the same badges to your project, the first thing you need to do is to add the following HTML code to your **README.md** file. You will of course need to update it to match your project. The token required for the code coverage badge will be explained later.
 ```
 <div align="center">
 
@@ -95,12 +99,13 @@ The first thing you need to do is to add to the **README.md** file the following
 
 <br>
 ```
+`href` is a the badges hyperlink while `src` is its source. The easiest badges to produce for the are generated on the fly but Shields using the metadata found on PyPI. Thus, those badges are updated automatically with each new release.
 
-### Test automation
+The test and coverage badges require a bit more work. The code coverage badge should be broken for now. A token has to be created for the repo. To do so, you must create an account on [Codecov](https://about.codecov.io/). Make sure the account is linked to the Github account of the owner of the repo in order to have proper permission You must then [install Codecov](https://about.codecov.io/) on your repository. Scroll to the bottom of the page, select **Open Source** and then click **Install it for free**. You can then select on which repository you whish to install Codecov. Then, from your account page, go to your repository and select **Settings** on the top right of the page. Copy the token under **Repository Upload Token**. You must then navigate to the Github repo page, go the the **Seetings** and select **Actions** under **Secrets and variables**. Create a **New repository secret** named *CODECOV_TOKEN* where you have pasted the token. Your repository now have a Codecov token.
 
-### Coverage automation
+The value of the shorter token to be replaced in the previous HTML code can be found by looking at the badge examples for your repository in the [Codecov app](https://app.codecov.io/login).
 
-### Quality automation
+The next step is to write a workflow that will be lunched everytime a pull request is created in order to automtatically run the tests and update the code coverage. First, add a file **/.github/workflows/tests.yml** to the repo. Its content can be copied from Haarpy's [tests.yml](https://github.com/polyquantique/haarpy/tree/master/.github/workflows) file. Once again, the content of the file has to be updated according to your specific project. This file will automatically run all tests and update Codecov on every pull request, and every push made to the *master* branch.
 ## Subsequent Releases
 
 
