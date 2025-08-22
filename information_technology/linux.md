@@ -4,7 +4,7 @@ The following is a guide to set up a solid work environment on Ubuntu. With this
 ## Table of Contents
 - [Ubuntu Installation](#ubuntu_installation)
 - [Working Setup](#working_setup)
-- [Python Virtual Environments](#python_virtual_environments)
+- [Python Virtual Environments](#python-virtual-environments)
 - [Julia](#julia)
 - [Mathematica](#mathematica)
 - [Mount a Formatted Disk](#mount_a_formatted_disk)

@@ -10,6 +10,7 @@ The technicalities of git will not be discussed here. For a git tutorial, refer 
 - [Documentation](#documentation)
 - [First Release](#first-release)
 - [Maintenance](#maintenance)
+- [Subsequent Releases](#subsequent-releases)
 
 ## Github Setup
 The first step is to create a new repository on Github. Three files are automatically included in the repo : `README.md`, `LICENSE` and `.gitignore` file. The `README.md` is a markdown file that contains the overview of the repo or the library; it is displayed on the main page of the repo. The `LICENSE` file is simply a copyright file. Finally, the `.gitignore` file is useful to ignore specific types of files from a git standpoint whenever modifications are pushed to a specific branch.
@@ -41,16 +42,37 @@ pylint haarpy/unitary.py
 *Pypi* link
 
 
+```
+pip install haarpy
+```
+But it is preferable to install from source to always work from the version in developpement. To do so, you have to be in your clone folder.
+```
+pip install -e .
+```
+In order to also include all needed libraries in your local working environment.
+```
+pip install -r requirements.txt
+pip install -r requirements-dev.txt
+```
 ## Maintenance
+The library is now pip installable. Now imagine you have added some features to the library. You created a new branch, made some changes, did a pull request 
+
+
 The following section discuss the maintenance of the library and the procedure to update the library by releasing a new version.
 
 
-How to look up all instance of a specific string in linux??? (to update version)
+Create a new branch make some changes. And do pull request. You can automate the test by...
 
 
-
-
-
+## Subsequent Releases
+The last thing to do is to update the version number everywhere on the repo the version of the new release. In order to avoid missing any instance, use the following shell command to find all files containing an instance of the string *version*.
+```
+grep -rl "version" .
+```
+I would usually validate that all files have been properly updated by looking for any instance of the old version number.
+```
+grep -rl "0.0.1" .
+```
 ## Pypi
 Find name and see if already taken.
 
