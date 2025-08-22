@@ -68,7 +68,7 @@ log of changes
 ### Badges
 The badges, usually provided by [Shields](https://shields.io/), are often seen on the main page of Python libraries repos. It provides concise information about the library and asserts its reliability.
 <p align="center">
-  <img src="figures/badges.png" alt="badges" title="badges">
+  <img src="figures/badges.png" alt="badges" title="badges" width="600">
 </p>
 
 The first thing you need to do is to add to the **README.md** file the following HTML code
